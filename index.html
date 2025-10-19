@@ -64,11 +64,11 @@
         .ruler-segment {
             flex-grow: 1;
         }
-        .ruler-excelente { background-color: #c6f6d5; }
-        .ruler-bom { background-color: #c6f6d5; }
-        .ruler-esperado { background-color: #fefcbf; }
-        .ruler-ruim { background-color: #fed7d7; }
-        .ruler-critico { background-color: #fed7d7; }
+        .ruler-excelente { background-color: #22c55e; } /* Verde Escuro */
+        .ruler-bom { background-color: #86efac; }       /* Verde Claro */
+        .ruler-esperado { background-color: #fef08a; }  /* Amarelo */
+        .ruler-ruim { background-color: #fdba74; }       /* Laranja */
+        .ruler-critico { background-color: #f87171; }    /* Vermelho */
 
         .ruler-meta-marker {
             position: absolute;
@@ -88,14 +88,13 @@
     <header class="bg-white/95 backdrop-blur-lg sticky top-0 z-50 shadow-md border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <h1 class="text-2xl font-bold text-gray-800">[Natura+Avon] Benchmark: ação imediata e proposta de metodologia preditiva</h1>
-                <div class="flex flex-col items-end">
-                    <img src="LOGO-02.png" alt="Creative/TM Logo" class="h-8 mb-1">
-                </div>
+                <h1 class="text-2xl font-bold text-gray-800">Africa | Benchmark</h1>
+                <img src="https://i.imgur.com/mkZrqmn.png" alt="Logo Creative/TM" class="h-16">
             </div>
              <div id="tabs" class="flex flex-col sm:flex-row justify-center border-t border-gray-200">
-                <button data-tab="tab1" class="tab-button text-gray-500 font-semibold py-3 px-6 border-b-2">Fase 1: Aplicação Imediata</button>
-                <button data-tab="tab2" class="tab-button text-gray-500 font-semibold py-3 px-6 border-b-2">Fase 2: Projeção Preditiva</button>
+                <button data-tab="tab1" class="tab-button text-gray-500 font-semibold py-3 px-6 border-b-2">Básico (Imediato): Base Histórica</button>
+                <button data-tab="tab3" class="tab-button text-gray-500 font-semibold py-3 px-6 border-b-2">Intermediário: Projeção Preditiva em Batch</button>
+                <button data-tab="tab2" class="tab-button text-gray-500 font-semibold py-3 px-6 border-b-2">Avançado: Projeção Preditiva Probabilística</button>
             </div>
         </div>
     </header>
@@ -110,7 +109,7 @@
             <div id="tab1" class="tab-pane">
                 <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8 rounded-r-lg">
                     <p class="text-blue-800">
-                        <strong class="font-bold">Ponto de partida:</strong> para uma aplicação imediata, o padrão de benchmark utilizado seria o mesmo que está em vigência atualmente. Esta abordagem inicial garante uma transição suave e estabelece a base para a evolução futura, que culminará na metodologia preditiva da Fase 2.
+                        <strong class="font-bold">Ponto de partida:</strong> para uma aplicação imediata, o padrão de benchmark utilizado seria o mesmo que está em vigência atualmente. Esta abordagem inicial garante uma transição suave e estabelece a base para a evolução futura, que culminará em alguma das metodologias preditivas apresentadas nas abas a seguir.
                     </p>
                 </div>
 
@@ -209,7 +208,7 @@
                                         <div class="flex justify-between text-xs font-bold text-gray-500 mt-1 px-1">
                                             <span>&lt; R$1,50</span>
                                             <div class="text-center">
-                                                <span class="font-bold text-base" style="color: var(--brand-color);">R$ 2,34</span>
+                                                <span class="font-bold text-base" style="color: var(--brand-color);">R$ 1,80</span>
                                                 <span class="block text-xs font-semibold">META</span>
                                             </div>
                                             <span>> R$3,10</span>
@@ -245,17 +244,280 @@
             </div>
 
             <!-- ======================================================= -->
-            <!--             TAB 2: PROJEÇÃO Preditiva (v6)              -->
+            <!--        TAB 3: PROPOSTA INTERMEDIÁRIA (EM BATCH)         -->
+            <!-- ======================================================= -->
+            <div id="tab3" class="tab-pane hidden">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Intermediário: Projeção Preditiva em Batch</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Aqui, damos o salto da análise do passado para a <strong>previsão do futuro</strong>. Esta metodologia abandona o benchmark estático e introduz um modelo de <strong>Machine Learning de Regressão</strong> que aprende com o histórico e, crucialmente, se adapta a <strong>variáveis de mercado externas</strong>. O resultado é um benchmark dinâmico e inteligente, que prevê o valor do KPI esperado com base no cenário atual, não apenas na média histórica.
+                    </p>
+                </div>
+
+                <!-- Conceito Visual -->
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Conceito do Modelo em Batch</h3>
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+                        
+                        <div class="flex-1 text-center">
+                            <h4 class="font-bold text-lg mb-4">Inputs do modelo</h4>
+                            <div class="space-y-3">
+                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
+                                    <i class="fas fa-database fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
+                                    <span class="ml-3 font-semibold">Dados históricos internos</span>
+                                </div>
+                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
+                                    <i class="fas fa-globe-americas fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
+                                    <span class="ml-3 font-semibold">Dados de mercado (Kantar, SimilarWeb, APIs públicas, Ad Libraries)</span>
+                                </div>
+                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
+                                    <i class="fas fa-chart-line fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
+                                    <span class="ml-3 font-semibold">Tendências e sazonalidade</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-gray-400 my-4 lg:my-0">
+                            <i class="fas fa-long-arrow-alt-down lg:fa-long-arrow-alt-right fa-2x"></i>
+                        </div>
+                        
+                        <div class="flex-1 text-center max-w-xs">
+                            <div class="bg-gray-800 text-white p-6 rounded-lg shadow-xl relative">
+                                <i class="fas fa-brain fa-3x mb-3"></i>
+                                <h4 class="font-bold text-lg">Modelo Preditivo</h4>
+                                <p class="text-sm text-gray-300">(Machine Learning de Regressão)</p>
+                                <span class="absolute -top-3 -right-3 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">INTERMEDIÁRIA</span>
+                            </div>
+                        </div>
+
+                        <div class="text-gray-400 my-4 lg:my-0">
+                             <i class="fas fa-long-arrow-alt-down lg:fa-long-arrow-alt-right fa-2x"></i>
+                        </div>
+
+                        <div class="flex-1 text-center">
+                            <h4 class="font-bold text-lg mb-4">Outputs (resultados)</h4>
+                            <div class="space-y-3">
+                                <div class="bg-green-100 text-green-800 p-3 rounded-lg flex items-center shadow-sm border border-green-200">
+                                    <i class="fas fa-bullseye fa-fw w-8 text-lg text-green-600"></i>
+                                    <span class="ml-3 font-semibold">Benchmarks preditivos (D-1)</span>
+                                </div>
+                                <div class="bg-green-100 text-green-800 p-3 rounded-lg flex items-center shadow-sm border border-green-200">
+                                    <i class="fas fa-lightbulb fa-fw w-8 text-lg text-green-600"></i>
+                                    <span class="ml-3 font-semibold">Recomendações de otimização</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arquitetura -->
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-8 text-center">Arquitetura da metodologia em batch (Databricks + GCP)</h3>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-4 items-stretch justify-between gap-6 px-4">
+
+                        <!-- 1 -->
+                        <div class="text-center w-full h-full">
+                            <div class="p-4 rounded-lg border-2 h-full flex flex-col" style="border-color: var(--layer-1-color);">
+                                <h4 class="font-bold text-lg mb-3" style="color: var(--layer-1-color);">
+                                    <i class="fas fa-layer-group mr-2"></i>1. Ingestão e Estruturação
+                                </h4>
+                                <div class="flex-grow">
+                                    <p class="text-sm text-gray-600 mb-3">
+                                    Consolidação de dados internos, de mercado e tendências externas.
+                                    </p>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                                    <span class="tech-tag">Databricks Workflows</span>
+                                    <span class="tech-tag">BigQuery</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2 -->
+                        <div class="text-center w-full h-full">
+                            <div class="p-4 rounded-lg border-2 h-full flex flex-col" style="border-color: var(--layer-2-color);">
+                                <h4 class="font-bold text-lg mb-3" style="color: var(--layer-2-color);">
+                                    <i class="fas fa-brain mr-2"></i>2. Modelagem Preditiva
+                                </h4>
+                                <div class="flex-grow">
+                                    <p class="text-sm text-gray-600 mb-3">
+                                    Modelos de Série Temporal (Prophet) e Regressão (XGBoost) treinados no Databricks.
+                                    </p>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                                    <span class="tech-tag">Databricks</span>
+                                    <span class="tech-tag">Prophet / XGBoost</span>
+                                    <span class="tech-tag">MLflow</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3 -->
+                        <div class="text-center w-full h-full">
+                            <div class="p-4 rounded-lg border-2 h-full flex flex-col" style="border-color: var(--layer-3-color);">
+                                <h4 class="font-bold text-lg mb-3" style="color: var(--layer-3-color);">
+                                    <i class="fas fa-save mr-2"></i>3. Previsão e Armazenamento
+                                </h4>
+                                <div class="flex-grow">
+                                    <p class="text-sm text-gray-600 mb-3">
+                                    Previsões são executadas diariamente via Jobs e salvas no BigQuery, prontas para consumo.
+                                    </p>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                                    <span class="tech-tag">Databricks Jobs</span>
+                                    <span class="tech-tag">BigQuery</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4 -->
+                        <div class="text-center w-full h-full">
+                            <div class="p-4 rounded-lg border-2 h-full flex flex-col" style="border-color: var(--layer-4-color);">
+                                <h4 class="font-bold text-lg mb-3" style="color: var(--layer-4-color);">
+                                    <i class="fas fa-chart-bar mr-2"></i>4. Visualização e Insights
+                                </h4>
+                                <div class="flex-grow">
+                                    <p class="text-sm text-gray-600 mb-3">
+                                     Dashboards executivos de benchmarks e previsões por plataforma, formato e categoria.
+                                    </p>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                                    <span class="tech-tag">Looker Studio</span>
+                                    <span class="tech-tag">BigQuery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diferenciais -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 lg:col-span-3">Diferenciais Técnicos e Estratégicos</h3>
+
+                    <div class="value-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-gray-800 flex items-center text-lg">
+                            <i class="fas fa-project-diagram fa-fw mr-3" style="color: var(--layer-2-color);"></i>
+                            Portfólio de modelos por pilar
+                        </h4>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Cada pilar de beleza possui modelos próprios (CPM, CPC, CPV, CTR, ROAS), permitindo previsões hipergranulares por categoria e plataforma.
+                        </p>
+                    </div>
+
+                    <div class="value-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-gray-800 flex items-center text-lg">
+                            <i class="fas fa-bullseye-pointer fa-fw mr-3" style="color: var(--layer-2-color);"></i>
+                            Benchmark preditivo (valor único)
+                        </h4>
+                        <p class="text-sm text-gray-600 mt-2">
+                           Entrega um valor de previsão pontual (ex: "CPM esperado: R$ 2,30"), focado na tendência.
+                        </p>
+                    </div>
+
+                    <div class="value-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-gray-800 flex items-center text-lg">
+                            <i class="fas fa-sync fa-fw mr-3" style="color: var(--layer-2-color);"></i>
+                            Autoaprendizado agendado
+                        </h4>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Novos dados de mídia e mercado alimentam o sistema, recalibrando previsões diárias/semanais via Databricks Jobs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Simulação -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Simulação de CPM: Histórico vs. Preditivo (Regressão)</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Enquanto o benchmark histórico é fixo, o modelo preditivo responde a variações de mercado, categoria e plataforma, ajustando o CPM esperado.
+                        </p>
+                        <div class="chart-container h-72"><canvas id="batchChart"></canvas></div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Exemplo de Output</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Consulta: “Carrossel no Meta / Maquiagem / Brasil — Leilão CPM”
+                        </p>
+                        <div class="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                            <p class="text-sm font-semibold text-gray-500">CPM esperado (D-1)</p>
+                            <p class="text-5xl font-bold my-2" style="color: var(--brand-color);">R$ 2,30</p>
+                            <div class="mt-4 pt-4 border-t">
+                                <p class="text-sm font-semibold text-gray-500">Benchmark Histórico (Referência)</p>
+                                <p class="text-xl font-semibold text-gray-700 mt-1">R$ 1,80</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================================================= -->
+            <!--       TAB 2: PROJEÇÃO Preditiva (COMPLETA - v6)         -->
             <!-- ======================================================= -->
             <div id="tab2" class="tab-pane hidden">
                 <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Fase 2: Projeção Preditiva</h2>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Avançado: Projeção Preditiva Probabilística</h2>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Evolução para uma <strong>Metodologia Preditiva de Benchmarks Granulares</strong> —
-                        um sistema que prevê métricas de mídia (CPM, CPC, CPV, CTR, VTR, ROAS) por
-                        <strong>categoria de beleza</strong> (Maquiagem, Cabelos, Corpo, Perfumaria) e
-                        <strong>plataforma</strong>, com atualização semanal e base probabilística.
+                        Esta metodologia vai além da previsão de valor único, utilizando <strong>modelagem probabilística</strong> para entregar benchmarks dinâmicos com <strong>intervalos de confiança</strong>. Com uma arquitetura de <i>serving</i> <strong>em tempo real</strong>, permite a gestão de risco mais sofisticada e a tomada de decisão baseada não só na tendência, mas na probabilidade do resultado.
                     </p>
+                </div>
+
+                <!-- Conceito Visual -->
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Conceito do Modelo Probabilístico em Real Time</h3>
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+                        
+                        <div class="flex-1 text-center">
+                            <h4 class="font-bold text-lg mb-4">Inputs do modelo</h4>
+                            <div class="space-y-3">
+                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
+                                    <i class="fas fa-database fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
+                                    <span class="ml-3 font-semibold">Dados históricos internos</span>
+                                </div>
+                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
+                                    <i class="fas fa-globe-americas fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
+                                    <span class="ml-3 font-semibold">Dados de mercado (Kantar, SimilarWeb, APIs públicas, Ad Libraries)</span>
+                                </div>
+                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
+                                    <i class="fas fa-chart-line fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
+                                    <span class="ml-3 font-semibold">Tendências e sazonalidade</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-gray-400 my-4 lg:my-0">
+                            <i class="fas fa-long-arrow-alt-down lg:fa-long-arrow-alt-right fa-2x"></i>
+                        </div>
+                        
+                        <div class="flex-1 text-center max-w-xs">
+                            <div class="bg-gray-800 text-white p-6 rounded-lg shadow-xl relative">
+                                <i class="fas fa-brain fa-3x mb-3"></i>
+                                <h4 class="font-bold text-lg">Modelo Preditivo</h4>
+                                <p class="text-sm text-gray-300">(Machine Learning Probabilístico)</p>
+                                <span class="absolute -top-3 -right-3 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">AVANÇADO</span>
+                            </div>
+                        </div>
+
+                        <div class="text-gray-400 my-4 lg:my-0">
+                             <i class="fas fa-long-arrow-alt-down lg:fa-long-arrow-alt-right fa-2x"></i>
+                        </div>
+
+                        <div class="flex-1 text-center">
+                            <h4 class="font-bold text-lg mb-4">Outputs (resultados)</h4>
+                            <div class="space-y-3">
+                                <div class="bg-green-100 text-green-800 p-3 rounded-lg flex items-center shadow-sm border border-green-200">
+                                    <i class="fas fa-bullseye fa-fw w-8 text-lg text-green-600"></i>
+                                    <span class="ml-3 font-semibold">Benchmarks preditivos e dinâmicos (real-time)</span>
+                                </div>
+                                <div class="bg-green-100 text-green-800 p-3 rounded-lg flex items-center shadow-sm border border-green-200">
+                                    <i class="fas fa-lightbulb fa-fw w-8 text-lg text-green-600"></i>
+                                    <span class="ml-3 font-semibold">Recomendações de otimização</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Arquitetura -->
@@ -286,11 +548,11 @@
                         <div class="text-center w-full h-full">
                             <div class="p-4 rounded-lg border-2 h-full flex flex-col" style="border-color: var(--layer-2-color);">
                                 <h4 class="font-bold text-lg mb-3" style="color: var(--layer-2-color);">
-                                    <i class="fas fa-brain mr-2"></i>2. Modelagem Preditiva
+                                    <i class="fas fa-brain mr-2"></i>2. Modelagem Preditiva (Probabilística)
                                 </h4>
                                 <div class="flex-grow">
                                     <p class="text-sm text-gray-600 mb-3">
-                                    Modelos hierárquicos (PyMC) treinados no Databricks, prevendo métricas por formato, plataforma e categoria.
+                                    Modelos hierárquicos (PyMC) treinados no Databricks, prevendo métricas com intervalos de confiança.
                                     </p>
                                 </div>
                                 <div class="flex flex-wrap gap-2 mt-4 justify-center">
@@ -305,11 +567,11 @@
                         <div class="text-center w-full h-full">
                             <div class="p-4 rounded-lg border-2 h-full flex flex-col" style="border-color: var(--layer-3-color);">
                                 <h4 class="font-bold text-lg mb-3" style="color: var(--layer-3-color);">
-                                    <i class="fas fa-sync-alt mr-2"></i>3. Serving e Aprendizado
+                                    <i class="fas fa-server mr-2"></i>3. Serving e Aprendizado (Real-time)
                                 </h4>
                                 <div class="flex-grow">
                                     <p class="text-sm text-gray-600 mb-3">
-                                    Deploy e versionamento de modelos com monitoramento e recalibragem automática.
+                                    Deploy de APIs do modelo em tempo real, com monitoramento e recalibragem automática.
                                     </p>
                                 </div>
                                 <div class="flex flex-wrap gap-2 mt-4 justify-center">
@@ -327,7 +589,7 @@
                                 </h4>
                                 <div class="flex-grow">
                                     <p class="text-sm text-gray-600 mb-3">
-                                    Dashboards executivos de benchmarks e previsões por semana, formato e categoria.
+                                    Dashboards executivos de benchmarks e previsões por plataforma, formato e categoria.
                                     </p>
                                 </div>
                                 <div class="flex flex-wrap gap-2 mt-4 justify-center">
@@ -339,62 +601,6 @@
                     </div>
                 </div>
                 
-                 <!-- Conceito Visual -->
-                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Conceito do Modelo Preditivo</h3>
-                    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
-                        
-                        <div class="flex-1 text-center">
-                            <h4 class="font-bold text-lg mb-4">Inputs do modelo</h4>
-                            <div class="space-y-3">
-                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
-                                    <i class="fas fa-database fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
-                                    <span class="ml-3 font-semibold">Dados históricos internos</span>
-                                </div>
-                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
-                                    <i class="fas fa-globe-americas fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
-                                    <span class="ml-3 font-semibold">Dados de mercado (Kantar, SimilarWeb, APIs públicas, Ad Libraries)</span>
-                                </div>
-                                <div class="bg-slate-100 p-3 rounded-lg flex items-center shadow-sm">
-                                    <i class="fas fa-chart-line fa-fw w-8 text-lg" style="color: var(--brand-color);"></i>
-                                    <span class="ml-3 font-semibold">Tendências e sazonalidade</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-gray-400 my-4 lg:my-0">
-                            <i class="fas fa-long-arrow-alt-down lg:fa-long-arrow-alt-right fa-2x"></i>
-                        </div>
-                        
-                        <div class="flex-1 text-center max-w-xs">
-                            <div class="bg-gray-800 text-white p-6 rounded-lg shadow-xl relative">
-                                <i class="fas fa-brain fa-3x mb-3"></i>
-                                <h4 class="font-bold text-lg">Modelo Preditivo</h4>
-                                <p class="text-sm text-gray-300">(Machine Learning)</p>
-                                <span class="absolute -top-3 -right-3 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">PROPOSTA</span>
-                            </div>
-                        </div>
-
-                        <div class="text-gray-400 my-4 lg:my-0">
-                             <i class="fas fa-long-arrow-alt-down lg:fa-long-arrow-alt-right fa-2x"></i>
-                        </div>
-
-                        <div class="flex-1 text-center">
-                            <h4 class="font-bold text-lg mb-4">Outputs (resultados)</h4>
-                            <div class="space-y-3">
-                                <div class="bg-green-100 text-green-800 p-3 rounded-lg flex items-center shadow-sm border border-green-200">
-                                    <i class="fas fa-bullseye fa-fw w-8 text-lg text-green-600"></i>
-                                    <span class="ml-3 font-semibold">Benchmarks preditivos e dinâmicos</span>
-                                </div>
-                                <div class="bg-green-100 text-green-800 p-3 rounded-lg flex items-center shadow-sm border border-green-200">
-                                    <i class="fas fa-lightbulb fa-fw w-8 text-lg text-green-600"></i>
-                                    <span class="ml-3 font-semibold">Recomendações de otimização</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Diferenciais -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                     <h3 class="text-xl font-bold text-gray-800 lg:col-span-3">Diferenciais Técnicos e Estratégicos</h3>
@@ -433,9 +639,9 @@
                 <!-- Simulação -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Simulação de CPM: Estático vs. Preditivo</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Simulação de CPM: Histórico vs. Preditivo (Probabilístico)</h3>
                         <p class="text-sm text-gray-600 mb-4">
-                            Enquanto o benchmark histórico é fixo, o modelo preditivo responde a variações de mercado, categoria e plataforma, ajustando o CPM esperado em tempo real.
+                            O modelo probabilístico não apenas prevê o valor mais provável, mas também o <strong>intervalo de confiança</strong>, mostrando a faixa de resultados esperados.
                         </p>
                         <div class="chart-container h-72"><canvas id="predictiveChart"></canvas></div>
                     </div>
@@ -451,10 +657,6 @@
                             <div class="mt-4 pt-4 border-t">
                                 <p class="text-sm font-semibold text-gray-500">Intervalo de Confiança (95%)</p>
                                 <p class="text-xl font-semibold text-gray-700 mt-1">[ R$ 1,90 – R$ 2,70 ]</p>
-                            </div>
-                            <div class="mt-4 pt-4 border-t">
-                                <p class="text-sm font-semibold text-gray-500">Tendência vs. Semana Anterior</p>
-                                <p class="text-xl font-semibold text-green-600 mt-1">+5%</p>
                             </div>
                         </div>
                     </div>
@@ -492,16 +694,22 @@
                 });
             });
 
-            // Gráfico 2: Simulação Preditiva (Linha) - v6
+            // Gráfico 3: Simulação Preditiva (Avançado/Probabilístico)
             const ctxPredictive = document.getElementById('predictiveChart')?.getContext('2d');
             if (ctxPredictive) {
+                const predictiveData = [2.00, 2.15, 2.30, 2.65, 2.55, 2.45, 2.40, 2.34];
+                // Manually adjusted bounds to be visually coherent with the final [1.90, 2.70] example
+                const upperBound = [2.35, 2.50, 2.65, 3.0, 2.90, 2.80, 2.75, 2.70];
+                const lowerBound = [1.65, 1.80, 1.95, 2.30, 2.20, 2.10, 2.05, 1.90];
+
+
                 new Chart(ctxPredictive, {
                     type: 'line',
                     data: {
                         labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4 (Pico)', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8'],
                         datasets: [
                             {
-                                label: 'Benchmark Estático (Mediana)',
+                                label: 'Benchmark Histórico (Mediana)',
                                 data: [1.80, 1.80, 1.80, 1.80, 1.80, 1.80, 1.80, 1.80],
                                 borderColor: '#9ca3af',
                                 backgroundColor: 'transparent',
@@ -510,11 +718,112 @@
                                 pointRadius: 0
                             },
                              {
-                                label: 'Benchmark Preditivo (ML)',
-                                data: [2.00, 2.15, 2.30, 2.65, 2.55, 2.45, 2.40, 2.34],
+                                label: 'Previsão ML (Prob.)',
+                                data: predictiveData,
                                 borderColor: brandColor,
+                                tension: 0.3,
+                                borderWidth: 3,
+                                pointRadius: 3
+                            },
+                            {
+                                label: 'Intervalo de Confiança',
+                                data: upperBound,
+                                fill: {
+                                    target: '-1',
+                                    above: `${brandColor}33`, // Fill color between this and previous dataset
+                                },
+                                borderColor: 'transparent',
                                 backgroundColor: `${brandColor}33`,
-                                fill: true,
+                                pointRadius: 0,
+                                borderWidth: 0,
+                                tension: 0.3,
+                            },
+                            {
+                                // This dataset is invisible, only used for the lower boundary of the fill
+                                data: lowerBound,
+                                borderColor: 'transparent',
+                                pointRadius: 0,
+                                borderWidth: 0,
+                                tension: 0.3,
+                            },
+                            {
+                                label: 'Valor Realizado',
+                                data: [1.95, 2.10, 2.35, 2.60, 2.60, 2.40, 2.35, 2.30],
+                                borderColor: '#f59e0b',
+                                backgroundColor: 'transparent',
+                                tension: 0.3,
+                                borderWidth: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    // Filter out the invisible lower bound dataset from the legend
+                                    filter: item => item.text
+                                }
+                            },
+                            tooltip: {
+                                mode: 'index',
+                                intersect: false,
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label.includes('Intervalo') || !label) return null; // Hide tooltip for confidence interval
+                                        
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            label += new Intl.NumberFormat('pt-BR', { style: 'currency', 'currency': 'BRL' }).format(context.parsed.y);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                min: 1.6,
+                                max: 3.2,
+                                ticks: {
+                                    callback: function(value) {
+                                        return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Gráfico 2: Simulação Preditiva (Batch)
+            const ctxBatch = document.getElementById('batchChart')?.getContext('2d');
+            if (ctxBatch) {
+                new Chart(ctxBatch, {
+                    type: 'line',
+                    data: {
+                        labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4 (Pico)', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8'],
+                        datasets: [
+                            {
+                                label: 'Benchmark Histórico (Mediana)',
+                                data: [1.80, 1.80, 1.80, 1.80, 1.80, 1.80, 1.80, 1.80],
+                                borderColor: '#9ca3af',
+                                backgroundColor: 'transparent',
+                                borderWidth: 3,
+                                borderDash: [5, 5],
+                                pointRadius: 0
+                            },
+                             {
+                                label: 'Previsão ML (Regressão)',
+                                data: [2.00, 2.10, 2.25, 2.60, 2.50, 2.40, 2.35, 2.30],
+                                borderColor: brandColor,
+                                backgroundColor: 'transparent',
+                                fill: false,
                                 tension: 0.3,
                                 borderWidth: 3
                             },
@@ -554,7 +863,7 @@
                         },
                         scales: {
                             y: {
-                                beginAtZero: false,
+                                min: 1.6,
                                 max: 3,
                                 ticks: {
                                     callback: function(value) {
